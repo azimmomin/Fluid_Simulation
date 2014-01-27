@@ -1,0 +1,78 @@
+December 9th, ~10pm
+	-Added lots of syntax to the scene file.
+	-Lots of bug fixes.
+
+December 9th, ~7:30pm
+	-Changed FrameSaver's output file name format.
+
+December 9th, ~5:00pm
+	-Made it so Scene stores particles in a vector<Particle> instead of a vector<Particle*> to make memory management easier.
+	-Updated source.h/source.cpp, grid.h/grid.cpp, simulator.h/simulator.cpp, scene.h/scene.cpp, and main.cpp to handle above change.
+	-Moved rendering and updating into functions in scene.
+	-Changed syntax of scene files. Updated default_particles to work with it.
+	-Added support to save frames to file autmatically.
+
+December 9th, ~2:00pm
+	-Fixed some calculations in kernel.cpp by looking up gradient and laplacian in academic papers, fixed a memory leak, and made it so kernel constructors must be passed their radius of effect. Also made kernel.r a protected constant because we shouldn't need to modify it after the kernel has been made.
+	-Fixed force.h/force.cpp to allow the kernel radius of effect to be passed into each force.
+	-Fixed AccelerationField in field.cpp which used mass when it should've used density.
+	-Updated Renderer.cpp to handle change to kernel.hpp correctly.
+
+December 9th, ~Noon
+	-Rewrote BoundingTree.cpp/BoundingTree.hpp. It should now be impossible for particles to end up outside of the grid.
+	-Updated grid.cpp to handle the fact that BoundingTree allows particles to sit on the edges of the grid's space.
+	-Updated simulator.cpp to use BoundingTree's new interface.
+
+December 8th, ~Midnight
+	-Fixed bug in BoundingTree.cpp that allowed particles out through edges.
+
+December 8th, ~7:00pm
+	-Fixed FrameSaver.cpp's tendency to output images upside-down.
+
+December 8th, ~6:45pm
+	-Fixed bug in simulator.cpp/Boundingtree.cpp that caused instability (particles leaving the grid and crashing). It should be unconditionally stable now. Hopefully.
+
+December 8th, ~4:40pm
+	-Fixed rendering bug in Renderer.cpp
+
+December 8th, ~3:40pm
+	-Created/Tested FrameSaver.hpp/FrameSaver.cpp. It saves frames to pngs in a specified directory.
+	-Added FrameSaver.cpp to the Makefile
+
+December 7th, ~Tomorrow
+	-Fixed Renderer.cpp (didn't calculate density correctly/shouldn't have needed to).
+	-Fixed Simulator.cpp (didn't calculate density correctly).
+	-Changed main.cpp to make depth buffer work.
+
+December 7th, ~Later
+	-Removed debug statements from BoundingTree.cpp
+	-Completely changed main.cpp. Now uses "wasd" controls to move around "q" and "e" zoom, and holding shift pans.
+
+December 7th, ~Late
+	-Modified BoundingTree to handle the invisible walls containing the grid area.
+	-Modified field.cpp to remove an unsigned comparison warning.
+	-Modified Simulator to remove an unsigned comparison warning, and use tabs because the spaces were strange.
+
+December 6th, ~Late
+	-Fixed Renderer.cpp so it now renders properly using kernel.hpp. Apparently abs(int f) was pretending to be fabs(float f)...
+
+December 6th, ~8:00pm
+	-Removed unnecessary variable "level" from Renderer.cpp
+	-Added some functions to Matrix.hpp/Matrix.cpp that allow it to solve a basic 3x3 linear set of equations. (Needed for triangle intersection code.)
+	-Setup interface of BoundingTree.hpp/BoundingTree.cpp. It complies but needs to be run through some tests. I'll do that later.
+	-Modified Makefile to include BoundingTree.cpp
+	-Fixed grid.cpp (The same that I fixed on December 4th?)
+	-Reintegrated kernel.hpp into Renderer.cpp ... Now that that's fixed, something else broke so now Renderer doesn't properly render the isosurface. 
+
+December 4th, ~5:30pm
+	-Added in shading for Renderer.hpp/Renderer.cpp. Currently uses hack to do gradient (Del::Gradient was too noisy).
+	-Renderer() now takes in an additional integer argument (subdivision) representing how much each bucket will be subdivided. Each bucket will be split into subdivision^3 cubes for the marching tetrahedron algorithm.
+
+December 4th, ~3:40pm
+	-Fixed a bug in grid.cpp (particularly getParticleSubsection())
+	-Nearly completed Renderer.hpp/Renderer.cpp. It can now actaully draw the particles given. However, more modifications will be needed to make the rendering smoother...
+
+November 27th, ~8:00pm
+	-Finished most of the Renderer.hpp/Renderer.cpp files. It can not successfully display a sphere isosurface. No kernel or particle interaction yet though (all testing has been hard-coded in for now).
+	-Updated Makefile to include bindings for glut/opengl.
+

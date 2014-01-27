@@ -1,0 +1,48 @@
+12/08/2013 3:30 PM (Kevin):
+	- Changed Force constants
+	- Removed origin particle from subsection container in Grid
+	- Added show debug info to Particle
+	- Deleted debug statement in main
+	- Added safeguards (==) to prevent dividing by zero in kernel
+
+12/07/2013 6:15 PM (Kevin):
+	- Added setup to grid.cpp/h
+	- Added setGrid to simulator.cpp/h
+	- Added main grid parameter to scene
+	- Changed scene.cpp and main.cpp to use new grid setup
+
+12/06/2013 4:00 PM (Kevin):
+	- Field .h/.cpp split from Force class
+	- Makefile edited to add field.cpp
+	- Implemented new field definitions for various effects
+	- source.cpp updated to use new canContain method in Grid
+
+12/06/2013 3:00 PM (Kevin):
+	- QuickFix: Pressure Laplacian recalculated
+
+12/06/2013 2:30 PM (Kevin):
+	- Changed PressureForce to use pressure of particles instead of density
+	- Split force.h into force.h and kernel.h
+	- Changed makefile to include kernel.cpp
+	- Deleted Del class
+	- Hardcoded gradient and laplacian into kernels
+
+12/04/2013 04:43 PM (Kevin):
+	- Added distance randomizing to fluid source to allow it to be an area source as well as a point source.
+	- Deleted default constructor in fluid source
+	- Changed makefile to include scene.cpp
+
+12/04/2013 03:22 PM (Kevin):
+	- Attached grid and added rate to fluid source
+	- Set limits and delays to fluid source
+	- changed some internal mechanics of the source class
+
+11/27/2013 04:12 PM (Kevin):
+	- added some basic code for a fluid source (source.h, source.cpp)
+	- changed Particle class constructor, excluded density as a constructor value (particle.h, particle.cpp)
+	- added canContain method to Grid class to allow fluid source to check if the position specified is valid (grid.h, grid.cpp)
+	- added source.cpp to makefile
+
+Prelogging Phase (Kevin):
+	- Created force.h and force.cpp to handle internal and external forces on the particles
+	- force.h/cpp contain a Del operator declaration and Kernel declaration to allow for approximations of laplacian, gradient, and divergence

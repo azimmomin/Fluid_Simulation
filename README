@@ -1,0 +1,38 @@
+Aaron Beal: cs184-en
+Kevin Xie: cs184-bg
+Azim Momin: cs184-ae
+
+Platform: Linux hive7.CS.Berkeley.EDU 
+
+Location of sourcecode: ~/final_project/ [In cs184-ae home directory]
+- The name of the main file is main.cpp 
+Linux hive3.CS.Berkeley.EDU
+Azim Momin (cs184-ae) will submit on Linux hive3.CS.Berkeley.EDU
+
+Compiling:
+	make clean; make; ./final testPath
+
+	- testPath is the path to the test file. This must contain certain parameters.
+          See Scene.cpp for valid parameters.
+
+Required Features:
+	 - The WASD rotate object
+	 - QE keys zoom in and out
+	 - SHIFT + WASD keys translate
+	 - ESC key will exit program.
+	 - If you are not rendering to a file, press space bar to render at each
+           timestep.
+         - Included collisions with objects that are parsed in from OBJ file.
+         - Created acceleration structures for collisions and particle neighbor
+           location.
+	 - Have a fluid source to add fluid particles into the scene.
+         - Kernel Approximation for SPH method
+         - Marching Tetrahedron method used for iso surface rendering.
+
+Extras:
+
+         - Gravity fields have been implemented. This requires an extra parameter input
+           in the test file (see Scene.cpp).
+         - OpenMP was used to speed up rendering.
+         - Writing to PNG file and converting into MP4 animation.
+	

@@ -1,0 +1,9 @@
+size 5.0 10.0 5.0 0.5
+#camera 0 0 30 -53 26
+camera 0 0 14 -57 50
+mass 100
+params 8.3 1000 0.00002
+subdivision 1
+substep 1
+block 3 7 3 0 0 0 0.3
+runtime 10

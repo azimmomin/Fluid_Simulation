@@ -1,0 +1,15 @@
+size 5.0 10.0 5.0 0.5
+#camera 0 0 30 -53 26
+camera 0 0 14 -57 50
+mass 100
+params 8.3 1000 0.002
+subdivision 1
+substep 1
+block 3 7 3 0 0 0 0.3
+#gravity location-of-bottom-left vector-to-top-right direction-of-force strength-of-force
+gravity 0 0 0 3 10 3 1 0 0 10
+gravity 2 0 0 3 10 3 0 0 1 10
+gravity 2 0 2 3 10 3 -1 0 0 10
+gravity 0 0 2 3 10 3 0 0 -1 10
+gravity 0 0 0 10 10 10 0 -1 0 5
+runtime 10

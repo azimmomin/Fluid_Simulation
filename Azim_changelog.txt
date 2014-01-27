@@ -1,0 +1,77 @@
+11/27/2013 03:29 PM (Azim):
+    - changed constructor in particle (removed the acceleration variable).
+    - finished simulator.h and simulator.cpp
+      - calculates acceleration, forces, and density
+      - updates velocity and position of each particle according to a constant timestep
+
+11/27/2013 3:36 PM (Azim):
+    - added some comments to simulator.h and simulator.cpp
+
+12/04/2013 3:34 PM (Azim):
+    - created a basic main class
+    - finished the parser in scene.
+
+12/04/2013 4:05 PM (Azim):
+    - updated scene to include container
+    - started a container class
+
+12/05/2013 1:14 PM (Azim):
+    - Added some more parsing options in scene for Renderer
+    - I also store all of the obj files and make each an object
+    - I created an object class that takes an "object" from an obj file
+      - This object stores the vertices, vertex normals, and faces indicies for that object.
+    - The face indicies are stored within a Face class that I created.
+    - I took out the w values in the Normal class so that it stays consistent
+      with its parent class (vector).
+    - In Main I added a few comments, to organize the drawing.
+    - Environment and Container no longer exist...get rid of them.
+
+12/05/2013 1:30 PM (Azim):
+    - I changed Face and Object to only handle triangles
+    - When we test, we should make sure that our OBJ file only sends in 
+      triangular faces.
+
+12/05/2013 1:38 PM (Azim):
+    - Got rid of the unnecessary pointers in Object and Scene
+
+12/05/2013 2:53 PM (Azim):
+    - Added getter methods in grid to access the width, height, and depth.
+    - Created a bounding box based on the width, height, and depth of the grid.
+    - loaded obj files and drew objects in main.
+    - editted Makefile to include -lGLU for gluLookAt and gluPerspective.
+    - the can contain method in grid was modified to not work with pointers.
+12/05/2013 4:19 (Azim):    
+    - changed arguments in simulator's update and updateDensity
+    - also changed source's update to take in a reference to a vector of pointers to
+	particles.
+    - added particle update stuff to main
+    - added a vector of pointers to particles in Scene.
+
+12/07/2013 5:00 PM (Azim):
+    - Updated scene.cpp to include a default block of particles; there are if
+      statements at the end of the constructor for scene to make sure a source is made
+      only when we want it to be made. 
+    - Included a deconstructor in Simulator
+    - Main has new functionality for keyboard input as well as stepwise particle
+      rendering
+    - Scene.h also has a single bounding tree instead of a vector of bounding trees
+    - In scene.cpp changed div to divsize in the parsing portion.
+      - the free's in the deconstructor were changed to delete's
+
+12/11/2013 1:13 PM:
+    - Updated the draw function in Object to compare the string parsed in with "v"
+      instead of comparing it with 'v'
+
+12/11/2013 1:41 PM
+    - Added visible feature to scene.cpp
+      - it is parsed in as a second arguement to Object
+    - Files that are affected are Scene.cpp(parser and draw function), Object.cpp,
+      Object.h (The constructors), and BoundingTree (in constructor)
+12/13/2013 4:32 PM
+    - Added an extra term to the obj parameter
+    - This parameter is for toggling whether or not to draw in lines or triangles.
+    - Files changed are object.cpp, object.h, scene.cpp
+
+12/13/2013 4:53 PM
+    - Added an extra term in obj parameter in scene.cpp for removing an object after a 		certain number of frames.
+    - Pass in current frame into scene->update.

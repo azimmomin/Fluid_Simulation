@@ -1,0 +1,10 @@
+size 5.0 10.0 5.0 0.5
+camera -1 -2.25 21.5 -29 30
+mass 100
+params 8.3 1000 0.001
+subdivision 3
+substep 6
+block 5 10 5 0 0 0 0.4
+block 5 10 5 0.2 0.2 0.2 0.4
+#source 2.5 5 2.5   0 -1 0   1   0 0 0 0 0 0   0 0 0 0 0 0   160 20
+runtime 15

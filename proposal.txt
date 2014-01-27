@@ -1,0 +1,35 @@
+Kevin Xie cs184-bg
+Aaron Beal cs184-en
+Azim  Momin cs184-ae
+
+Goal:
+To use simulation methods to generate an animation of water.
+
+Method:
+Smooth Particle Hydrodynamics
+
+Work:
+
+Particles
+Kernel Approximation
+Integral Reprsentation of a Function
+Acceleration Structures 
+Collisions
+  - Import OBJ file and have fluid collide with it
+  - Container
+Fluid source
+
+
+Kevin and Azim will handle Particle System Mechanics.
+
+Aaron and Art will handle Rendering the Particle System.
+
+Extra:
+Gravity Fields
+Anisotropic Smoothing
+Artificially Intelligent Fish
+Keyboard and Mouse Input (Game Style)
+Caustics
+
+Staff:
+Aayush Dawra
